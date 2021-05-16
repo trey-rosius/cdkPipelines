@@ -21,9 +21,9 @@ class PipelineStack(core.Stack):
       source_action=cpactions.GitHubSourceAction(
         action_name='GitHub',
         output=source_artifact,
-        oauth_token=core.SecretValue.secrets_manager('github-token'),
-        owner='OWNER**REPLACEME',
-        repo='REPO**REPLACEME',
+        oauth_token=core.SecretValue.secrets_manager('trainer-github-token'),
+        owner='trey-rosius',
+        repo='cdkPipelines',
         trigger=cpactions.GitHubTrigger.POLL),
 
       synth_action=pipelines.SimpleSynthAction(
